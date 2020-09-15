@@ -6,7 +6,7 @@ console.log(fifaData);
 console.log('its working');
 // ⚽️ M  V P ⚽️ //
 
-/* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data */
+/* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data *****DONE*** */
 console.log(fifaData);
 // (a) Home Team name for 2014 world cup final **** the answer should be "Germany" index 828
 
@@ -42,7 +42,7 @@ console.log(awayTeamGoals[0]["Away Team Goals"]);
 // (e) Winner of 2014 world cup final */
 
 
-function findWinner(homeTeamGoals, awayTeamGoals,homeTeam, awayTeam){
+function findWinner(){
     if(homeTeamGoals[0]["Home Team Goals"] > awayTeamGoals[0]["Away Team Goals"]) {
         console.log(`${homeTeam[0]["Home Team Name"]} wins`);
     } else if (awayTeamGoals[0]["Away Team Goals"] > homeTeamGoals[0]["Home Team Goals"]){
@@ -51,17 +51,23 @@ function findWinner(homeTeamGoals, awayTeamGoals,homeTeam, awayTeam){
         console.log("Tie Game");
     }
 }
-findWinner(homeTeamGoals, awayTeamGoals, homeTeam, awayTeam);
+findWinner(); 
 
-// Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
+// Task 2: Create a function called  getFinals that takes `data` as an argument and returns an 
+// array of objects with only finals data */
 
-function getFinals(/* code here */) {
+function getFinals(array) {
 
-    /* code here */
+        let finals = array.filter(function(array){
+            return array.Stage === 'Final';
+        });
+    return finals;
+}
 
-};
+console.log(getFinals(fifaData));
 
-/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
+/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, 
+and returns an array called `years` containing all of the years in the dataset */
 
 function getYears(/* code here */) {
 
