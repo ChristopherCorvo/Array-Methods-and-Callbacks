@@ -10,10 +10,10 @@ console.log('its working');
 
 // (a) Home Team name for 2014 world cup final **** the answer should be "Germany" index 828
 
-// let homeTeam = fifaData.filter(function(fifaData) {
-//     return fifaData.Year === 2014 && fifaData.Stage === 'Final';
-// });
-// console.log(homeTeam[0]["Home Team Name"]);
+let homeTeam = fifaData.filter(function(fifaData) {
+    return fifaData.Year === 2014 && fifaData.Stage === 'Final';
+});
+console.log(homeTeam[0]["Home Team Name"]);
 
 // // (b) Away Team name for 2014 world cup final
 
@@ -42,16 +42,16 @@ console.log('its working');
 // // (e) Winner of 2014 world cup final */
 
 
-// function findWinner(){
-//     if(homeTeamGoals[0]["Home Team Goals"] > awayTeamGoals[0]["Away Team Goals"]) {
-//         console.log(`${homeTeam[0]["Home Team Name"]} wins`);
-//     } else if (awayTeamGoals[0]["Away Team Goals"] > homeTeamGoals[0]["Home Team Goals"]){
-//         console.log(`${awayTeam[0]["Away Team Name"]} wins`)
-//     } else {
-//         console.log("Tie Game");
-//     }
-// }
-// findWinner(); 
+function findWinner(){
+    if(homeTeamGoals[0]["Home Team Goals"] > awayTeamGoals[0]["Away Team Goals"]) {
+        console.log(`${homeTeam[0]["Home Team Name"]} wins`);
+    } else if (awayTeamGoals[0]["Away Team Goals"] > homeTeamGoals[0]["Home Team Goals"]){
+        console.log(`${awayTeam[0]["Away Team Name"]} wins`)
+    } else {
+        console.log("Tie Game");
+    }
+}
+findWinner(); 
 
 // Task 2: Create a function called  getFinals that takes `data` as an argument and returns an 
 // array of objects with only finals data */
@@ -148,7 +148,7 @@ function getAverageGoals(array) {
 
         averageAwayGoals = Math.round(totalAwayGoals/array.length);
 
-    return `The average goals scored per math are: Home:${averageHomeGoals} Away:${averageAwayGoals}`  
+    return `The average goals scored per match are: Home:${averageHomeGoals} Away:${averageAwayGoals}`  
 };
 
 console.log(getAverageGoals(fifaData));
