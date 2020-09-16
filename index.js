@@ -131,17 +131,27 @@ console.log(getWinnersByYear(getYears, getWinners));
 (Hint: use .reduce and do this in 2 steps) */
 
 function getAverageGoals(array) {
-    let averageHomeGoals = 0;
-    let averageAwayGoals = 0;
+    let totalHomeGoals = 0;
+    let totalAwayGoals = 0;
+    let averageHomeGoals;
+    let averageAwayGoals;
     
-    
-    averageHomeGoals = array.reduce((accumulator, currentValue) => {
-        accumulator + currentValue["Home Team Goals"],0
-    });
-    console.log(averageHomeGoals)
+    totalHomeGoals = array.reduce(function (accumulator, currentValue) { 
+        return accumulator + currentValue["Home Team Goals"];
+    },0);
+        
+        averageHomeGoals = Math.round(totalHomeGoals/array.length); 
+
+    totalAwayGoals = array.reduce(function (accumulator, currentValue) { 
+        return accumulator + currentValue["Away Team Goals"];
+    },0);
+
+        averageAwayGoals = Math.round(totalAwayGoals/array.length);
+
+    return `The average goals scored per math are: Home:${averageHomeGoals} Away:${averageAwayGoals}`  
 };
 
-getAverageGoals(fifaData);
+console.log(getAverageGoals(fifaData));
 
 /// STRETCH 🥅 //
 
